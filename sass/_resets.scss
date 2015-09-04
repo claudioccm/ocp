@@ -1,0 +1,38 @@
+// This module is to override default behavior from browsers.
+// The ones Normalize didn't catch.
+
+* { box-sizing: border-box; }
+
+// Overriding Webkit rounding on mobile browsers
+input { -webkit-appearance: none; border-radius: 0; }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: $gray-80;
+   font-size: 16px;
+   @include breakpoint($mobile-only) { text-align: center; }
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $gray-80;
+   font-size: 16px;
+   @include breakpoint($mobile-only) { text-align: center; }
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $gray-80;
+   font-size: 16px;
+   @include breakpoint($mobile-only) { text-align: center; }
+}
+
+:-ms-input-placeholder {
+   color: $gray-80;
+   font-size: 16px;
+   @include breakpoint($mobile-only) { text-align: center; }
+}

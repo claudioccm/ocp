@@ -1,0 +1,64 @@
+.b-footer {
+    background-color: $gray-70;
+
+    .b-footer-wrap {
+        padding: 60px 0;
+        @include wrap;
+
+        .m-align-center {
+            text-align: center;
+        }
+
+        .e-logo {
+            width: 100px;
+            margin: 20px 0;
+        }
+
+        .b-column {
+            display: inline-block;
+            width: 230px;
+            vertical-align: top;
+
+            h2 {
+                font-size: 16px;
+                color: white;
+            }
+
+            .e-item {
+                line-height: 1.6;
+                font-size: 14px;
+                color: $white-90;
+
+                a {
+                    color: $white-90;
+                }
+            }
+        }
+    }
+}
+
+.b-copyright {
+    background-color: $gray-90;
+
+    .b-copyright-wrap {
+        font-size: 11px;
+        color: $white-50;
+        @include wrap;
+
+        p {
+            display: inline-block;
+            padding: 15px 0px;
+            margin: 0;
+
+        }
+
+        div {
+            float: right;
+            padding: 15px 0px;
+
+            a {
+                color: $white-50;
+            }
+        }
+    }
+}

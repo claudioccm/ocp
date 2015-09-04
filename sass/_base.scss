@@ -1,0 +1,48 @@
+@font-face {
+    font-family: Aileron;
+    src: url(../font/aileron/Aileron-Regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Aileron;
+    src: url(../font/aileron/Aileron-Thin.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Aileron;
+    src: url(../font/aileron/Aileron-SemiBold.otf);
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: Aileron;
+    src: url(../font/aileron/Aileron-Bold.otf);
+    font-weight: bold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Aileron', sans-serif;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+input {
+    font-family: 'Aileron', sans-serif;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+.b-content {
+    min-height: calc(100vh - 250px); // Header and nav heights.
+}

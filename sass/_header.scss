@@ -1,0 +1,35 @@
+.b-header {
+    .b-header-wrap {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        -webkit-align-items: center;
+        padding: 35px 0;
+        @include wrap;
+
+        .b-logo {
+            flex-grow: 5;
+            flex-shrink: 1;
+            -webkit-flex: 5 1 410px;
+
+            .e-logo-img {
+                width: 100%;
+                max-width: 410px;
+            }
+        }
+
+        .b-link {
+            max-width: 190px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            -webkit-flex: 1 1 115px;
+            text-align: right;
+            color: $gray-50;
+
+            div {
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+        }
+    }
+}
