@@ -3,21 +3,53 @@
     box-shadow: 0 2px 7px 1px $gray-10;
 
     .b-nav-wrap {
-        padding: 25px 0 20px;
         @include wrap;
 
         .e-nav-item {
+            display: inline-block;
             color: $gray-70;
             text-transform: uppercase;
             line-height: 1;
+            padding: 25px 10px 20px;
+            @include transition;
+
+            @include breakpoint($mobile-only) { display: none; }
 
             & + .e-nav-item {
                 margin-left: 40px;
+            }
+
+            &:hover {
+                background-color: $gray-20;
+            }
+        }
+
+        .e-hidden-nav-item {
+            display: none;
+            padding: 20px 0;
+            color: $gray-70;
+            text-transform: uppercase;
+            line-height: 1;
+            font-size: 15px;
+
+
+            @include breakpoint($mobile-only) { display: inline-block; }
+
+            & + .e-hidden-nav-item {
+                margin-left: 20px;
+            }
+
+            i,
+            span {
+                vertical-align: middle;
             }
         }
 
         .e-social-media {
             float: right;
+            margin-top: 20px;
+
+            @include breakpoint($mobile-only) { display: none; }
 
             .e-social-item {
                 @include circle;

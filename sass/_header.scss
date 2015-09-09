@@ -7,10 +7,17 @@
         padding: 35px 0;
         @include wrap;
 
+
+        @include breakpoint($mobile-only) {
+            -flex-justify-content: center;
+            justify-content: center;
+        }
+
         .b-logo {
             flex-grow: 5;
             flex-shrink: 1;
             -webkit-flex: 5 1 410px;
+            margin: 3px 0 -2px;
 
             .e-logo-img {
                 width: 100%;
@@ -26,10 +33,45 @@
             text-align: right;
             color: $gray-50;
 
+            @include breakpoint($mobile-only) { display: none; }
+
             div {
                 text-transform: uppercase;
                 font-weight: 500;
             }
         }
+    }
+
+    .e-menu {
+        position: absolute;
+        display: none;
+        top: 10px;
+        right: 10px;
+
+        @include breakpoint($mobile-only) { display: inline-block; }
+    }
+
+    .b-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 85%;
+        right: -100%;
+        margin-right: 15%;
+        text-align: center;
+        background-color: $green;
+        @include transition;
+
+        &.m-active {
+            right: -15%;
+        }
+
+        a {
+            display: block;
+            padding: 20px 10px;
+        }
+
+        @include breakpoint($mobile-only) { display: block; }
     }
 }

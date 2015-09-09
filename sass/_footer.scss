@@ -2,7 +2,7 @@
     background-color: $gray-70;
 
     .b-footer-wrap {
-        padding: 60px 0;
+        padding: 30px 0 50px;
         @include wrap;
 
         .m-align-center {
@@ -11,13 +11,21 @@
 
         .e-logo {
             width: 100px;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         .b-column {
             display: inline-block;
             width: 230px;
             vertical-align: top;
+
+            @include breakpoint($mobile-only) {
+                display: block;
+                width: auto;
+                margin: 0 10px;
+                text-align: center;
+            }
+
 
             h2 {
                 font-size: 16px;
@@ -50,11 +58,23 @@
             padding: 15px 0px;
             margin: 0;
 
+            @include breakpoint($mobile-only) {
+                display: block;
+                margin: 0 10px;
+                text-align: center;
+            }
         }
 
         div {
             float: right;
             padding: 15px 0px;
+
+            @include breakpoint($mobile-only) {
+                float: none;
+                margin: 0 10px;
+                padding: 0 0 15px;
+                text-align: center;
+            }
 
             a {
                 color: $white-50;

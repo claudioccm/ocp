@@ -4,6 +4,11 @@
     .b-ocp-wrap {
         @include wrap;
 
+        @include breakpoint($mobile-only) {
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
         .e-circle {
             @include circle;
 
@@ -17,6 +22,12 @@
             text-align: center;
             color: $gray-60;
             box-shadow: 0 0 0 10px $gray-10, 0 0 15px 0 $gray-15;
+
+            @include breakpoint($mobile-only) {
+                width: calc(100vw - 40px);
+                height: calc(100vw - 40px);
+                margin-bottom: 40px;
+            }
 
             div {
                 font-size: 110px;
@@ -43,6 +54,12 @@
             margin-left: 80px;
             vertical-align: middle;
 
+            @include breakpoint($mobile-only) {
+                display: block;
+                width: auto;
+                margin: 0 10px;
+            }
+
             p {
                 font-size: 22px;
                 color: $gray-50;
@@ -57,6 +74,17 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
+
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                i {
+                    font-size: 21px;
+                    vertical-align: middle;
+                    color: $gray-50;
+                }
             }
         }
     }
@@ -66,6 +94,8 @@
     .b-news-wrap {
         padding: 60px 0;
         @include wrap;
+
+        @include breakpoint($mobile-only) { padding-bottom: 0; }
 
         &::before {
             content: "";
@@ -97,9 +127,21 @@
             min-height: 400px;
             vertical-align: top;
 
+            @include breakpoint($mobile-only) {
+                display: block;
+                width: auto;
+                margin: 0 10px;
+                text-align: center;
+            }
+
             & + .b-column {
                 width: 245px;
                 margin-left: 45px;
+
+                @include breakpoint($mobile-only) {
+                    width: auto;
+                    margin-left: 10px;
+                }
             }
 
             h3 {
@@ -108,6 +150,8 @@
                 font-weight: 300;
                 text-transform: uppercase;
                 color: $gray-50;
+
+                @include breakpoint($mobile-only) { margin-top: 40px; }
 
                 .fa {
                     margin-left: 10px;
@@ -131,6 +175,8 @@
 
             .e-image-description {
                 color: $gray-50;
+
+                @include breakpoint($mobile-only) { margin-bottom: 20px; }
             }
 
             .e-view-more {
@@ -141,6 +187,19 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
+
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                i {
+                    font-size: 21px;
+                    vertical-align: middle;
+                    color: $gray-50;
+                }
+
+                @include breakpoint($mobile-only) { position: static; }
             }
 
             .e-blog-item {
@@ -198,6 +257,8 @@
             font-weight: 300;
             text-transform: uppercase;
             color: $gray-50;
+
+            @include breakpoint($mobile-only) { font-size: 40px; }
         }
 
         h3 {
@@ -212,11 +273,16 @@
         .b-left {
             display: inline-block;
             width: 190px;
-            height: 130px;
+            height: 190px;
             vertical-align: middle;
 
-            .fa {
-                font-size: 130px;
+            @include breakpoint($mobile-only) {
+                width: auto;
+                display: block;
+            }
+
+            .material-icons {
+                font-size: 190px;
                 color: $gray-50;
             }
         }
@@ -227,6 +293,13 @@
             margin-left: 100px;
             text-align: left;
             vertical-align: middle;
+
+            @include breakpoint($mobile-only) {
+                width: auto;
+                display: block;
+                margin: 0 10px;
+                text-align: center;
+            }
 
             p {
                 font-size: 22px;
@@ -242,6 +315,17 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
+
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                i {
+                    font-size: 21px;
+                    vertical-align: middle;
+                    color: $gray-50;
+                }
             }
         }
     }
@@ -254,7 +338,12 @@
     form {
         display: inline-block;
         width: 740px;
-        margin: 15px 0;
+        padding: 15px 0;
+
+        @include breakpoint($mobile-only) {
+            width: auto;
+            display: block;
+        }
 
         input {
             width: 740px;
@@ -263,6 +352,10 @@
             border: 0;
             text-align: left;
             background-color: #E2E766;
+
+            @include breakpoint($mobile-only) {
+                width: calc(100% - 36px);
+            }
         }
     }
 }
