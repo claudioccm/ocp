@@ -3,24 +3,67 @@
     box-shadow: 0 2px 7px 1px $gray-10;
 
     .b-nav-wrap {
+        padding: 0;
+        margin: 0;
         @include wrap;
+
+        @include breakpoint($tablet) { text-align: center;}
+
+        ul, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
         .e-nav-item {
             display: inline-block;
             color: $gray-70;
-            text-transform: uppercase;
             line-height: 1;
-            padding: 25px 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
             @include transition;
 
-            @include breakpoint($mobile-only) { display: none; }
+            @include breakpoint($tablet) { display: none; }
 
-            & + .e-nav-item {
-                margin-left: 40px;
-            }
+            & + .e-nav-item { margin-left: -4px; }
+        }
+
+        .e-nav-item > a {
+            text-transform: uppercase;
+            padding: 25px 20px 20px;
+            display: inline-block;
+
+            &:hover { background-color: $gray-10; }
+        }
+
+        .e-nav-item:hover .e-submenu {
+            display: block;
+        }
+
+        .e-submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            min-width: 100%;
+            box-shadow: 0 0 8px $gray-20;
+        }
+
+        .e-submenu-item {
+            &:first-child a { padding-top: 20px; }
+            &:last-child a { padding-bottom: 20px; }
+        }
+
+        .e-submenu-item a {
+            color: $white;
+            padding: 15px 20px;
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            background-color: $gray-50;
 
             &:hover {
-                background-color: $gray-20;
+                background-color: $gray-70;
             }
         }
 
@@ -32,27 +75,23 @@
             line-height: 1;
             font-size: 15px;
 
+            @include breakpoint($tablet) { display: inline-block; }
 
-            @include breakpoint($mobile-only) { display: inline-block; }
-
-            & + .e-hidden-nav-item {
-                margin-left: 20px;
-            }
+            & + .e-hidden-nav-item { margin-left: 20px; }
 
             i,
-            span {
-                vertical-align: middle;
-            }
+            span { vertical-align: middle; }
         }
 
         .e-social-media {
             float: right;
             margin-top: 20px;
 
-            @include breakpoint($mobile-only) { display: none; }
+            @include breakpoint($tablet) { display: none; }
 
             .e-social-item {
                 @include circle;
+                @include transition;
 
                 display: inline-block;
                 width: 25px;
@@ -68,6 +107,11 @@
                     line-height: 25px;
                     font-size: 14px;
                 }
+            }
+
+            .e-social-item:hover {
+                @include transition;
+                transform: scale(1.3);
             }
         }
     }

@@ -4,8 +4,8 @@
     .b-ocp-wrap {
         @include wrap;
 
-        @include breakpoint($mobile-only) {
-            padding-bottom: 40px;
+        @include breakpoint($tablet) {
+            padding: 40px 0;
             text-align: center;
         }
 
@@ -23,9 +23,15 @@
             color: $gray-60;
             box-shadow: 0 0 0 10px $gray-10, 0 0 15px 0 $gray-15;
 
+            @include breakpoint($tablet) {
+                display: block;
+                margin: auto;
+                text-align: center;
+
+            }
+
             @include breakpoint($mobile-only) {
-                width: calc(100vw - 40px);
-                height: calc(100vw - 40px);
+                
                 margin-bottom: 40px;
             }
 
@@ -51,8 +57,10 @@
         .e-message {
             display: inline-block;
             width: 545px;
-            margin-left: 80px;
+            
             vertical-align: middle;
+
+            @include breakpoint($desktop) { margin-left: 80px; }
 
             @include breakpoint($mobile-only) {
                 display: block;
@@ -74,6 +82,9 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
+                padding: 7px 10px 10px;
+                margin-left: -10px;
+                @include transition;
 
                 span {
                     display: inline-block;
@@ -82,10 +93,18 @@
 
                 i {
                     font-size: 21px;
+                    margin-left: 10px;
                     vertical-align: middle;
                     color: $gray-50;
                 }
+
+                &:hover {
+                    background-color: $gray-10;
+                    @include transition;
+                }
             }
+
+
         }
     }
 }
@@ -145,7 +164,7 @@
             }
 
             h3 {
-                margin: 0 0 15px 0;
+                margin: 0;
                 font-size: 22px;
                 font-weight: 300;
                 text-transform: uppercase;
@@ -187,6 +206,9 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
+                padding: 7px 10px 10px;
+                margin-left: -10px;
+                @include transition;
 
                 span {
                     display: inline-block;
@@ -197,6 +219,12 @@
                     font-size: 21px;
                     vertical-align: middle;
                     color: $gray-50;
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: $gray-10;
+                    @include transition;
                 }
 
                 @include breakpoint($mobile-only) { position: static; }
@@ -218,10 +246,6 @@
                     color: $gray-50;
                 }
 
-                &:first-of-type {
-                    padding-top: 0;
-                }
-
                 & + .e-blog-item {
                     border-top: 1px solid $gray-10;
                 }
@@ -229,6 +253,8 @@
         }
     }
 }
+
+
 
 .b-started {
     background-color: $gray-05;
@@ -325,6 +351,7 @@
                     font-size: 21px;
                     vertical-align: middle;
                     color: $gray-50;
+                    margin-left: 10px;
                 }
             }
         }
@@ -345,16 +372,64 @@
             display: block;
         }
 
-        input {
-            width: 740px;
+        .e-textfield {
+            width: 640px;
             height: 35px;
-            padding: 10px 20px;
+            padding: 18px 20px 12px;
             border: 0;
             text-align: left;
             background-color: #E2E766;
+            font-size: 18px;
+            color: $gray-50 !important;
+            
+            &::-webkit-input-placeholder { 
+               color: $gray-50;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+               color: $gray-50;  
+            }
+
+            &::-moz-placeholder {  /* Firefox 19+ */
+               color: $gray-50;  
+            }
+
+            &:-ms-input-placeholder {  
+               color: $gray-50;  
+            }
 
             @include breakpoint($mobile-only) {
                 width: calc(100% - 36px);
+                margin-bottom: 5px;
+            }
+
+            &:focus {
+                background-color: $gray-10;
+            }
+        }
+         
+        .e-submit {
+            width: 99px;
+            padding: 9px 20px 10px;
+            margin-left: -3px;
+            background-color: $gray-10;
+            border: 0;
+            vertical-align: top;
+            font-size: 16px;
+            line-height: 1;
+            color: $gray-60;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $gray-20;
+                
+            }
+
+            @include breakpoint($mobile-only) { 
+                width: calc(100% - 36px);
+                margin: 0;
             }
         }
     }

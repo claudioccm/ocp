@@ -37,8 +37,15 @@
                 font-size: 14px;
                 color: $white-90;
 
-                a {
-                    color: $white-90;
+                a { color: $white-90; }
+                a:hover { 
+                    color: $white; 
+                    text-decoration: underline;
+                }
+
+                &.m-disabled {
+                    pointer-events: none;
+                    opacity: .4;
                 }
             }
         }
@@ -76,9 +83,8 @@
                 text-align: center;
             }
 
-            a {
-                color: $white-50;
-            }
+            a { color: $white-50; }
+            a:hover { color: $white; }
         }
     }
 }

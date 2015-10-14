@@ -4,7 +4,7 @@
         display: flex;
         align-items: center;
         -webkit-align-items: center;
-        padding: 35px 0;
+        padding: 15px 0;
         @include wrap;
 
 
@@ -22,6 +22,8 @@
             .e-logo-img {
                 width: 100%;
                 max-width: 410px;
+                @include breakpoint($tablet) { margin: 0 auto; }
+                @include breakpoint($mobile-only) { max-width: 310px; }
             }
         }
 
@@ -32,12 +34,19 @@
             -webkit-flex: 1 1 115px;
             text-align: right;
             color: $gray-50;
+            padding: 10px;
+            @include transition;
 
-            @include breakpoint($mobile-only) { display: none; }
+            @include breakpoint($tablet) { display: none; }
 
             div {
                 text-transform: uppercase;
                 font-weight: 500;
+            }
+
+            &:hover {
+                background-color: $gray-10;
+                @include transition;
             }
         }
     }
@@ -45,10 +54,10 @@
     .e-menu {
         position: absolute;
         display: none;
-        top: 10px;
-        right: 10px;
+        top: 20px;
+        right: 15px;
 
-        @include breakpoint($mobile-only) { display: inline-block; }
+        @include breakpoint($tablet) { display: inline-block; }
     }
 
     .b-menu {
@@ -61,6 +70,7 @@
         margin-right: 15%;
         text-align: center;
         background-color: $green;
+        box-shadow: 0 0 10px $gray-20;
         @include transition;
 
         &.m-active {
