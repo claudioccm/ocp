@@ -143,7 +143,7 @@
             position: relative;
             display: inline-block;
             width: 345px;
-            min-height: 400px;
+            min-height: 500px;
             vertical-align: top;
 
             @include breakpoint($mobile-only) {
@@ -202,12 +202,13 @@
                 position: absolute;
                 left: 0;
                 bottom: 0px;
+                margin-left: -10px; 
                 font-size: 14px;
                 font-weight: bold;
                 text-transform: uppercase;
                 color: $gray-50;
                 padding: 7px 10px 10px;
-                margin-left: -10px;
+
                 @include transition;
 
                 span {
@@ -227,7 +228,10 @@
                     @include transition;
                 }
 
-                @include breakpoint($mobile-only) { position: static; }
+                @include breakpoint($tablet) { 
+                    position: static; 
+                    display: block;
+                }
             }
 
             .e-blog-item {
@@ -242,8 +246,16 @@
                     text-transform: uppercase;
                 }
 
-                div {
+                h4 {
                     color: $gray-50;
+                    margin: 0;
+                    font-weight: 400;
+                }
+
+                .e-author {
+                    font-size: 14px;
+                    color: $green-20k;
+
                 }
 
                 & + .e-blog-item {
