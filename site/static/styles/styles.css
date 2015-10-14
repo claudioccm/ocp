@@ -156,10 +156,10 @@ a {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 85%;
+  width: 55%;
   right: -100%;
   margin-right: 15%;
-  text-align: center;
+  text-align: left;
   background-color: #D4DD22;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   -webkit-transition: all .4s ease;
@@ -168,10 +168,22 @@ a {
     right: -15%; }
   .b-header .b-menu a {
     display: block;
-    padding: 20px 10px; }
+    padding: 15px 40px;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    .b-header .b-menu a:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
   @media (max-width: 800px) {
     .b-header .b-menu {
       display: block; } }
+.b-header .b-menu .e-submenu {
+  padding: 0;
+  margin: 0; }
+  .b-header .b-menu .e-submenu li {
+    list-style-type: none;
+    margin-left: 0; }
+  .b-header .b-menu .e-submenu .e-submenu-item a {
+    padding-left: 60px; }
 
 .b-nav {
   background-color: #D4DD22;
@@ -232,20 +244,21 @@ a {
       background-color: rgba(0, 0, 0, 0.5); }
       .b-nav .b-nav-wrap .e-submenu-item a:hover {
         background-color: rgba(0, 0, 0, 0.7); }
-    .b-nav .b-nav-wrap .e-hidden-nav-item {
+    @media (max-width: 1024px) {
+      .b-nav .b-nav-wrap .e-hidden-nav-item {
+        display: inline-block; } }
+    .b-nav .b-nav-wrap .e-hidden-nav-item a {
       display: none;
-      padding: 20px 0;
+      padding: 20px;
       color: rgba(0, 0, 0, 0.7);
       text-transform: uppercase;
       line-height: 1;
-      font-size: 15px; }
-      @media (max-width: 1024px) {
-        .b-nav .b-nav-wrap .e-hidden-nav-item {
-          display: inline-block; } }
-      .b-nav .b-nav-wrap .e-hidden-nav-item + .e-hidden-nav-item {
-        margin-left: 20px; }
-      .b-nav .b-nav-wrap .e-hidden-nav-item i,
-      .b-nav .b-nav-wrap .e-hidden-nav-item span {
+      font-size: 15px;
+      display: inline-block; }
+      .b-nav .b-nav-wrap .e-hidden-nav-item a:hover {
+        background-color: rgba(0, 0, 0, 0.1); }
+      .b-nav .b-nav-wrap .e-hidden-nav-item a i,
+      .b-nav .b-nav-wrap .e-hidden-nav-item a span {
         vertical-align: middle; }
     .b-nav .b-nav-wrap .e-social-media {
       float: right;

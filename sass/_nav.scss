@@ -68,16 +68,19 @@
         }
 
         .e-hidden-nav-item {
+            @include breakpoint($tablet) { display: inline-block; }
+        }
+
+        .e-hidden-nav-item a {
             display: none;
-            padding: 20px 0;
+            padding: 20px;
             color: $gray-70;
             text-transform: uppercase;
             line-height: 1;
             font-size: 15px;
+            display: inline-block;
 
-            @include breakpoint($tablet) { display: inline-block; }
-
-            & + .e-hidden-nav-item { margin-left: 20px; }
+            &:hover { background-color: $gray-10; }
 
             i,
             span { vertical-align: middle; }
