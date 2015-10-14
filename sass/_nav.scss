@@ -68,11 +68,12 @@
         }
 
         .e-hidden-nav-item {
+            display: none;
             @include breakpoint($tablet) { display: inline-block; }
         }
 
         .e-hidden-nav-item a {
-            display: none;
+            
             padding: 20px;
             color: $gray-70;
             text-transform: uppercase;

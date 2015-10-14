@@ -244,11 +244,12 @@ a {
       background-color: rgba(0, 0, 0, 0.5); }
       .b-nav .b-nav-wrap .e-submenu-item a:hover {
         background-color: rgba(0, 0, 0, 0.7); }
-    @media (max-width: 1024px) {
-      .b-nav .b-nav-wrap .e-hidden-nav-item {
-        display: inline-block; } }
+    .b-nav .b-nav-wrap .e-hidden-nav-item {
+      display: none; }
+      @media (max-width: 1024px) {
+        .b-nav .b-nav-wrap .e-hidden-nav-item {
+          display: inline-block; } }
     .b-nav .b-nav-wrap .e-hidden-nav-item a {
-      display: none;
       padding: 20px;
       color: rgba(0, 0, 0, 0.7);
       text-transform: uppercase;
